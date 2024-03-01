@@ -2949,7 +2949,7 @@ my-profile/user-management/edit-dashboard
 my-profile/user-management/view-dashboard
 my-profile/user-management/delete-dashboard
 my-profile/user-management/add-dashboard
-98. my-profile/user-management/list-dashboard
+my-profile/user-management/list-dashboard
 my-profile/user-management/update-dashboard
 my-profile/user-management/manage-preferences
 my-profile/user-management/edit-preferences
